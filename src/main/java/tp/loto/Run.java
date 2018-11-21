@@ -17,6 +17,8 @@ public class Run {
 			filereader = new FileReader(fichier);
 			CSVReader csvReader = new CSVReader(filereader);
 
+			int[][] resultat = new int[300][7];
+
 			csvReader.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -24,7 +26,6 @@ public class Run {
 			e.printStackTrace();
 		}
 
-		// int[][] resultat = new int[300][7];
 	}
 
 }

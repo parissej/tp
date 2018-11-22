@@ -1,30 +1,14 @@
 package tp.loto;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
-import au.com.bytecode.opencsv.CSVReader;
+import java.util.ArrayList;
 
 public class Run {
 
+	private static final String CSV_FILE_PATH = "doc/euromillions_4.csv";
+
 	public static void main(String[] args) {
-		File fichier = new File("C:\\Users\\Juliette\\eclipse-workspace\\tp\\doc\\euromillions_4.csv");
 
-		FileReader filereader;
-		try {
-			filereader = new FileReader(fichier);
-			CSVReader csvReader = new CSVReader(filereader);
-
-			int[][] resultat = new int[300][7];
-
-			csvReader.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		ArrayList<Tirage> listeDeTirages = new ArrayList<Tirage>();
 
 	}
 

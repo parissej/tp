@@ -13,6 +13,12 @@ public class Personnage {
 		this(0, "Arme", new Arme());
 	}
 
+	/**
+	 *
+	 * @param pPvMax ses pv au max
+	 * @param pNom   le nom du personnage
+	 * @param pArme  son arme
+	 */
 	public Personnage(int pPvMax, String pNom, Arme pArme) {
 		this.setPv(pPvMax);
 		this.setPvMax(pPvMax);
@@ -33,7 +39,7 @@ public class Personnage {
 	}
 
 	private void setPv(int pPv) {
-		this.pv = pPv;
+		this.pv = pPv <= 0 ? 0 : pPv;
 	}
 
 	public String getNom() {
@@ -69,7 +75,7 @@ public class Personnage {
 	public Personnage combatAMort(Personnage pDefenseur) {
 
 		Random commencePremier = new Random();
-		Personnage first = commencePremier.nextInt(2) == 0 ? this : pDefenseur;
+		Personnage first = commencePremier.nextBoolean() ? this : pDefenseur;
 		Personnage second = first == this ? pDefenseur : this;
 
 		while (this.getPv() > 0 && pDefenseur.getPv() > 0) {

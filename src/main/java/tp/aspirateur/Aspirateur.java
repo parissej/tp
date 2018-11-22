@@ -4,6 +4,9 @@ public class Aspirateur {
 
 	private int x;
 	private int y;
+
+	// On pourrait faire une enum
+	// N E W S
 	private char orientation;
 
 	private int xPiece;

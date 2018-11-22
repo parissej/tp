@@ -70,4 +70,10 @@ public class Tirage {
 	public String getEtoile_2() {
 		return this.etoile_2;
 	}
+
+	@Override
+	public String toString() {
+		return "[" + this.getBoule_1() + ", " + this.getBoule_2() + ", " + this.getBoule_3() + ", " + this.getBoule_4()
+				+ ", " + this.getBoule_5() + ", " + this.getEtoile_1() + ", " + this.getEtoile_2() + "]";
+	}
 }

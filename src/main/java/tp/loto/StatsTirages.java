@@ -45,19 +45,13 @@ public class StatsTirages {
 		HashMap<Integer, Integer> listeNombreDeSorties = new HashMap<>();
 		Stream<Map.Entry<Integer, Integer>> sorted_listeNombreDeSorties = listeNombreDeSorties.entrySet().stream()
 				.sorted(Map.Entry.comparingByValue());
-		// TreeMap<Integer, Integer> sorted_listeNombreDeSorties = new TreeMap<Integer,
-		// Integer>();
 
 		// Les valeurs des boules vont de 1 à 50
 		for (int i = 1; i <= 50; i++) {
 			listeNombreDeSorties.put(i, this.getNombreSortiesBoule1(i));
 		}
 
-		System.out.println(listeNombreDeSorties);
-
-		listeNombreDeSorties.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
-
-		return -1;
+		return sorted_listeNombreDeSorties.findFirst().get().getKey();
 	}
 
 }

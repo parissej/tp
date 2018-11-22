@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Run {
@@ -15,7 +14,7 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		ArrayList<Tirage> listeDeTirages = new ArrayList<Tirage>();
+		StatsTirages statsTirages = new StatsTirages();
 
 		InputStream flux;
 		try {
@@ -35,9 +34,13 @@ public class Run {
 					tokenizer.nextToken();
 				}
 
-				listeDeTirages.add(new Tirage(tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(),
-						tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken()));
+				statsTirages.ajouterTirage(new Tirage(tokenizer.nextToken(), tokenizer.nextToken(),
+						tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(),
+						tokenizer.nextToken()));
 			}
+
+			System.out.println(statsTirages.getNombreSortiesBoule1(5));
+			System.out.println(statsTirages.getBoule1LaMoinsSortie());
 
 			buff.close();
 		} catch (FileNotFoundException e) {

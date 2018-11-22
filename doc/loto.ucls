@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="tp.loto.StatsTirages" project="tp" 
     file="/tp/src/main/java/tp/loto/StatsTirages.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="771" y="116"/>    
+    <position height="-1" width="-1" x="712" y="263"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="tp.loto.Run" project="tp" file="/tp/src/main/java/tp/loto/Run.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1041" y="106"/>    
+    <position height="-1" width="-1" x="1011" y="250"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,12 +21,12 @@
   </class>  
   <package id="3" language="java" name="tp.loto" project="tp" file="/tp/src/main/java/tp/loto" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1047" y="224"/>    
+    <position height="-1" width="-1" x="984" y="77"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="4" language="java" name="tp.loto.Tirage" project="tp" file="/tp/src/main/java/tp/loto/Tirage.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="190" y="273"/>    
+    <position height="-1" width="-1" x="345" y="261"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

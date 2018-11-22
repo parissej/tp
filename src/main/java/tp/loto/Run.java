@@ -10,6 +10,9 @@ import java.util.StringTokenizer;
 
 public class Run {
 
+	/**
+	 * String contenant le chemin relatif au fichier CSV
+	 */
 	private static final String CSV_FILE_PATH = "doc/euromillions_4.csv";
 
 	public static void main(String[] args) {
@@ -34,13 +37,13 @@ public class Run {
 					tokenizer.nextToken();
 				}
 
-				statsTirages.ajouterTirage(new Tirage(tokenizer.nextToken(), tokenizer.nextToken(),
-						tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(), tokenizer.nextToken(),
-						tokenizer.nextToken()));
+				statsTirages.ajouterTirage(new Tirage(Integer.valueOf(tokenizer.nextToken()),
+						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken()),
+						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken()),
+						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken())));
 			}
 
-			System.out.println(statsTirages.getNombreSortiesBoule1(5));
-			System.out.println(statsTirages.getBoule1LaMoinsSortie());
+			System.out.println("Tirage probable, valeures moins sortie : " + statsTirages.getTirageProbable());
 
 			buff.close();
 		} catch (FileNotFoundException e) {

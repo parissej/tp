@@ -6,43 +6,42 @@ public class Tirage {
 	// 2 étoiles allant de 1 à 12
 	private int boule_1, boule_2, boule_3, boule_4, boule_5, etoile_1, etoile_2;
 
-	public Tirage(String pBoule_1, String pBoule_2, String pBoule_3, String pBoule_4, String pBoule_5, String pEtoile_1,
-			String pEtoile_2) {
-		this.setBoule_1(pBoule_1);
-		this.setBoule_2(pBoule_2);
-		this.setBoule_3(pBoule_3);
-		this.setBoule_4(pBoule_4);
-		this.setBoule_5(pBoule_5);
-		this.setEtoile_1(pEtoile_1);
-		this.setEtoile_2(pEtoile_2);
+	public Tirage(int pI, int pI2, int pI3, int pI4, int pI5, int pI6, int pI7) {
+		this.setBoule_1(pI);
+		this.setBoule_2(pI2);
+		this.setBoule_3(pI3);
+		this.setBoule_4(pI4);
+		this.setBoule_5(pI5);
+		this.setEtoile_1(pI6);
+		this.setEtoile_2(pI7);
 	}
 
-	public void setBoule_1(String pBoule_1) {
-		this.boule_1 = Integer.parseInt(pBoule_1);
+	public void setBoule_1(int pBoule_1) {
+		this.boule_1 = pBoule_1;
 	}
 
-	public void setBoule_2(String pBoule_2) {
-		this.boule_2 = Integer.parseInt(pBoule_2);
+	public void setBoule_2(int pBoule_2) {
+		this.boule_2 = pBoule_2;
 	}
 
-	public void setBoule_3(String pBoule_3) {
-		this.boule_3 = Integer.parseInt(pBoule_3);
+	public void setBoule_3(int pBoule_3) {
+		this.boule_3 = pBoule_3;
 	}
 
-	public void setBoule_4(String pBoule_4) {
-		this.boule_4 = Integer.parseInt(pBoule_4);
+	public void setBoule_4(int pBoule_4) {
+		this.boule_4 = pBoule_4;
 	}
 
-	public void setBoule_5(String pBoule_5) {
-		this.boule_5 = Integer.parseInt(pBoule_5);
+	public void setBoule_5(int pBoule_5) {
+		this.boule_5 = pBoule_5;
 	}
 
-	public void setEtoile_1(String pEtoile_1) {
-		this.etoile_1 = Integer.parseInt(pEtoile_1);
+	public void setEtoile_1(int pEtoile_1) {
+		this.etoile_1 = pEtoile_1;
 	}
 
-	public void setEtoile_2(String pEtoile_2) {
-		this.etoile_2 = Integer.parseInt(pEtoile_2);
+	public void setEtoile_2(int pEtoile_2) {
+		this.etoile_2 = pEtoile_2;
 	}
 
 	public int getBoule_1() {

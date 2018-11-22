@@ -6,10 +6,15 @@ public class Aspirateur {
 	private int y;
 	private char orientation;
 
-	public Aspirateur(int pX, int pY, char pOrientation) {
+	private int xPiece;
+	private int yPiece;
+
+	public Aspirateur(int pX, int pY, char pOrientation, int pXPiece, int pYPiece) {
 		this.setX(pX);
 		this.setY(pY);
 		this.setOrientation(pOrientation);
+		this.setxPiece(pXPiece);
+		this.setyPiece(pYPiece);
 	}
 
 	public int getX() {
@@ -34,6 +39,22 @@ public class Aspirateur {
 
 	public void setOrientation(char pOrientation) {
 		this.orientation = pOrientation;
+	}
+
+	public int getxPiece() {
+		return this.xPiece;
+	}
+
+	public void setxPiece(int pXPiece) {
+		this.xPiece = pXPiece;
+	}
+
+	public int getyPiece() {
+		return this.yPiece;
+	}
+
+	public void setyPiece(int pYPiece) {
+		this.yPiece = pYPiece;
 	}
 
 	@Override
@@ -64,19 +85,27 @@ public class Aspirateur {
 	public void avancer() {
 		switch (this.getOrientation()) {
 		case 'N':
-			this.setY(this.getY() + 1);
+			if (this.getY() != this.getyPiece()) {
+				this.setY(this.getY() + 1);
+			}
 			break;
 
 		case 'W':
-			this.setY(this.getX() - 1);
+			if (this.getX() != 0) {
+				this.setX(this.getX() - 1);
+			}
 			break;
 
 		case 'S':
-			this.setY(this.getY() - 1);
+			if (this.getY() != 0) {
+				this.setY(this.getY() - 1);
+			}
 			break;
 
 		case 'E':
-			this.setY(this.getX() + 1);
+			if (this.getX() != this.getxPiece()) {
+				this.setX(this.getX() + 1);
+			}
 			break;
 		}
 	}

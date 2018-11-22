@@ -11,9 +11,9 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		File fichier = new File("C:\\Users\\Juliette\\eclipse-workspace\\TPs\\doc\\fichier.txt");
-
 		try {
+			File fichier = new File("C:\\Users\\Juliette\\eclipse-workspace\\tp\\doc\\fichier.txt");
+
 			InputStream flux = new FileInputStream(fichier);
 			InputStreamReader lecture = new InputStreamReader(flux);
 			BufferedReader buff = new BufferedReader(lecture);
@@ -21,17 +21,18 @@ public class Run {
 
 			// PREMIERE LIGNE
 			StringTokenizer tokenizer = new StringTokenizer(ligne);
-			Object[][] piece = new Object[Integer.parseInt(tokenizer.nextToken())][Integer
-					.parseInt(tokenizer.nextToken())];
+			int xMaxPiece = Integer.parseInt(tokenizer.nextToken());
+			int yMaxPiece = Integer.parseInt(tokenizer.nextToken());
 
 			// SECONDE LIGNE
 			ligne = buff.readLine();
 			tokenizer = new StringTokenizer(ligne);
 
-			Aspirateur iHoover = new Aspirateur(Integer.parseInt(tokenizer.nextToken()),
-					Integer.parseInt(tokenizer.nextToken()), tokenizer.nextToken().charAt(0));
+			int xAspi = Integer.parseInt(tokenizer.nextToken());
+			int yAspi = Integer.parseInt(tokenizer.nextToken());
+			char cOrientAspi = tokenizer.nextToken().charAt(0);
 
-			piece[iHoover.getX()][iHoover.getY()] = iHoover;
+			Aspirateur iHoover = new Aspirateur(xAspi, yAspi, cOrientAspi, xMaxPiece, yMaxPiece);
 
 			// TROISIEME LIGNE
 			ligne = buff.readLine();
@@ -41,7 +42,6 @@ public class Run {
 			}
 
 			System.out.println(iHoover);
-
 			buff.close();
 
 		} catch (Exception e) {

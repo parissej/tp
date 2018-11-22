@@ -10,7 +10,7 @@ import au.com.bytecode.opencsv.CSVReader;
 public class Run {
 
 	public static void main(String[] args) {
-		File fichier = new File("C:\\Users\\Juliette\\eclipse-workspace\\TPs\\doc\\euromillions_4.csv");
+		File fichier = new File("C:\\Users\\Juliette\\eclipse-workspace\\tp\\doc\\euromillions_4.csv");
 
 		FileReader filereader;
 		try {

@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Run {
 
@@ -14,15 +17,17 @@ public class Run {
 	 * String contenant le chemin relatif au fichier CSV
 	 */
 	private static final String CSV_FILE_PATH = "doc/euromillions_4.csv";
+	private static final Logger LOG = LogManager.getLogger();
 
 	public static void main(String[] args) {
 
+		Run.LOG.info("Initialisation de l'objet StatsTirage");
 		StatsTirages statsTirages = new StatsTirages();
+		Run.LOG.info("O3bjet StatsTirage initialisé");
 
-		InputStream flux;
 		try {
 
-			flux = new FileInputStream(Run.CSV_FILE_PATH);
+			InputStream flux = new FileInputStream(Run.CSV_FILE_PATH);
 			InputStreamReader lecture = new InputStreamReader(flux);
 			BufferedReader buff = new BufferedReader(lecture);
 

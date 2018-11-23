@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +22,7 @@ public class Run {
 
 		Run.LOG.info("Initialisation de l'objet StatsTirage");
 		StatsTirages statsTirages = new StatsTirages();
-		Run.LOG.info("O3bjet StatsTirage initialisé");
+		Run.LOG.info("Objet StatsTirage initialisé");
 
 		try {
 
@@ -36,16 +35,21 @@ public class Run {
 			StringTokenizer tokenizer = new StringTokenizer(ligne, ";");
 
 			// AUTRES LIGNES : LES TIRAGES
+			int numeroDuTirage = 0;
 			while ((ligne = buff.readLine()) != null) {
 				tokenizer = new StringTokenizer(ligne, ";");
 				for (int i = 0; i < 5; i++) {
 					tokenizer.nextToken();
 				}
 
+				numeroDuTirage++;
+
+				Run.LOG.trace("Ajout du Tirage n°{}", numeroDuTirage);
 				statsTirages.ajouterTirage(new Tirage(Integer.valueOf(tokenizer.nextToken()),
 						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken()),
 						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken()),
 						Integer.valueOf(tokenizer.nextToken()), Integer.valueOf(tokenizer.nextToken())));
+				Run.LOG.trace("Tirage n°{} ajouté à la liste des tirages", numeroDuTirage);
 			}
 
 			System.out.println("Tirage probable, valeures moins sortie : " + statsTirages.getTirageProbable());
